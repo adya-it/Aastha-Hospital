@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Astha Hospital & Heart Center | Sultanpur</title>
+<meta name="description" content="Multi-speciality hospital in Sultanpur with an advanced Cath Lab, 24x7 ICU and emergency care. Ayushman Bharat accepted.">
+<link rel="icon" href="https://asthahearthospital.com/wp-content/uploads/2026/01/favicon-300x300.webp">
+<meta property="og:title" content="Astha Hospital &amp; Heart Center, Sultanpur">
+<meta property="og:description" content="Multi-speciality hospital with an advanced Cath Lab, 24x7 ICU and emergency care.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0B4F4A; --teal-d:#073A36; --teal-m:#168079; --mint:#EAF4F1; --mint-d:#D3E8E2;
+  --red:#D2232A; --red-d:#B01B21; --gold:#F4B63F; --gold-s:#FBE3AE; --gold-l:#FFF4DB;
+  --ink:#10211F; --muted:#506460; --line:#D3E2DD; --w:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+html{overflow-x:clip}body{font-family:'Mukta',system-ui,sans-serif;font-size:17px;line-height:1.6;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em;font-weight:700;color:var(--teal-d)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 24px}
+.hi{font-family:'Mukta',sans-serif}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:600;font-size:16px;border:2px solid transparent;transition:background .15s,color .15s,border-color .15s;line-height:1.2;white-space:nowrap}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-d)}
+.btn-teal{background:var(--teal);color:#fff}.btn-teal:hover{background:var(--teal-d)}
+.btn-line{border-color:var(--teal);color:var(--teal);background:transparent}.btn-line:hover{background:var(--teal);color:#fff}
+.btn-gold{background:var(--gold);color:var(--teal-d)}.btn-gold:hover{background:#e9a62a}
+.btn-white{background:#fff;color:var(--teal-d)}.btn-white:hover{background:var(--gold-s)}
+
+/* utility strip */
+.util{background:var(--teal-d);color:#d6ebe6;font-size:14.5px}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:42px}
+.ticker{position:relative;height:42px;flex:1;min-width:0}
+.ticker span{position:absolute;inset:0;display:flex;align-items:center;opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ticker span.on{opacity:1;transform:none}
+.ticker b{color:var(--gold);font-weight:600;margin-right:8px}
+.util-links{display:flex;align-items:center;gap:22px}
+.util-links a:hover{color:#fff;text-decoration:underline}
+.wa{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.1);padding:4px 12px;border-radius:999px;color:#fff}
+
+/* main bar */
+.bar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:28px;height:78px}
+.logo{display:flex;align-items:center;gap:12px;flex:none}
+.logo-mark{width:46px;height:46px;border-radius:12px;background:var(--teal);display:grid;place-items:center;overflow:hidden;flex:none}
+.logo-mark img{width:100%;height:100%;object-fit:contain}
+.logo b{font-family:'Bricolage Grotesque',sans-serif;font-size:21px;line-height:1;color:var(--teal-d);display:block;letter-spacing:-.02em}
+.logo small{font-size:13px;color:var(--muted);display:block;margin-top:3px}
+.nav{display:flex;align-items:center;gap:6px;margin-left:auto}
+.nav>li{list-style:none}
+.nav>li>a,.nav>li>button{display:flex;align-items:center;gap:5px;height:78px;padding:0 12px;white-space:nowrap;font-weight:600;font-size:16.5px;color:var(--teal-d);background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1px}
+.nav>li:hover>a,.nav>li:hover>button,.nav>li:focus-within>button{border-bottom-color:var(--red)}
+.caret{width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px)}
+.mega{position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid var(--line);box-shadow:0 30px 40px -24px rgba(7,58,54,.45);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .16s,transform .16s,visibility .16s}
+.nav>li:hover>.mega,.nav>li:focus-within>.mega{opacity:1;visibility:visible;transform:none}
+.mega .wrap{display:grid;grid-template-columns:1fr 1fr 1fr 1.05fr;gap:34px;height:auto;padding-top:30px;padding-bottom:32px;align-items:start}
+.mega h4{font-size:16px;margin-bottom:10px;color:var(--teal-m)}
+.mega ul{list-style:none;display:grid;gap:2px}
+.mega ul a{display:block;padding:5px 0;font-size:16px}
+.mega ul a:hover{color:var(--red)}
+.mega .promo{background:var(--teal);color:#fff;border-radius:10px;padding:22px}
+.mega .promo h4{color:#fff;font-size:20px;margin-bottom:6px}
+.mega .promo p{font-size:15px;color:#cfe6e1;margin-bottom:14px}
+.bar-cta{display:flex;align-items:center;gap:10px;flex:none}
+.sbtn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:#fff;display:grid;place-items:center;color:var(--teal)}
+.sbtn:hover{border-color:var(--teal)}
+.burger{display:none;width:44px;height:44px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--teal);font-size:22px;line-height:1}
+.search-pop{position:absolute;left:0;right:0;top:100%;background:var(--teal-d);padding:16px 0;display:none}
+.search-pop.open{display:block}
+.search-pop input{width:100%;padding:15px 18px;border-radius:999px;border:0;font:inherit;font-size:17px}
+
+/* hero */
+.hero{position:relative;background:var(--mint);overflow:hidden;padding:56px 0 236px}
+.slides{display:grid}
+.slide{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .6s,visibility .6s}
+.slide.on{opacity:1;visibility:visible}
+.slide .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center;min-height:440px}
+.slide .copy>*{opacity:0;transform:translateY(12px);transition:opacity .55s,transform .55s}
+.slide.on .copy>*{opacity:1;transform:none}
+.slide.on .copy>:nth-child(2){transition-delay:.08s}.slide.on .copy>:nth-child(3){transition-delay:.16s}.slide.on .copy>:nth-child(4){transition-delay:.24s}
+.hero h1,.hero .h1{font-size:clamp(38px,5.2vw,70px);font-weight:800;color:var(--teal-d);letter-spacing:-.03em;line-height:1.02}
+.hero .hindi{font-family:'Mukta';font-weight:600;font-size:clamp(20px,2.2vw,27px);color:var(--teal-m);margin-top:16px}
+.hero .lead{font-size:18.5px;color:var(--muted);max-width:30em;margin-top:14px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.art{position:relative;display:grid;place-items:center}
+.art::before{content:"";position:absolute;width:min(78%,420px);aspect-ratio:1;border-radius:50%;background:var(--gold-s);top:50%;left:50%;transform:translate(-50%,-50%)}
+.art svg{position:relative;width:100%;max-width:540px;height:auto;fill:none;stroke:var(--teal);stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.art svg .acc{stroke:var(--red)}
+.art svg .sign{fill:var(--teal);stroke:none;font:700 13px 'Bricolage Grotesque',sans-serif;letter-spacing:.08em}
+.art svg .lbl{fill:var(--teal-d);stroke:none;font:600 13px 'Mukta',sans-serif}
+.art svg .drawable{stroke-dasharray:1;stroke-dashoffset:1}
+.slide.on .art .drawable{animation:draw 2.2s ease forwards}
+.slide.on .art .acc.drawable{animation-delay:.45s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.sweep{position:absolute;left:0;right:0;bottom:166px;height:62px;pointer-events:none}
+.sweep svg{width:100%;height:100%;display:block}
+.sweep path{fill:none;vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-linecap:round}
+.sweep .base{stroke:var(--teal);stroke-width:1.5;opacity:.22}
+.sweep .beat{stroke:var(--red);stroke-width:3;stroke-dasharray:110 890;animation:sweep 5.2s linear infinite}
+@keyframes sweep{from{stroke-dashoffset:110}to{stroke-dashoffset:-890}}
+.controls{position:absolute;left:0;right:0;bottom:124px;z-index:4}
+.controls .wrap{display:flex;align-items:center;gap:16px}
+.bars{display:flex;gap:8px}
+.bars button{width:58px;height:6px;border:0;border-radius:3px;background:rgba(11,79,74,.2);position:relative;overflow:hidden;padding:0}
+.bars button::after{content:"";position:absolute;inset:0;background:var(--teal);transform:scaleX(0);transform-origin:left}
+.bars button.on::after{animation:fill 7s linear forwards}
+.hero:hover .bars button.on::after,.hero:focus-within .bars button.on::after{animation-play-state:paused}
+@keyframes fill{to{transform:scaleX(1)}}
+.arrows{display:flex;gap:8px;margin-left:auto}
+.arrows button{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--teal);background:transparent;color:var(--teal);font-size:22px;line-height:1}
+.arrows button:hover{background:var(--teal);color:#fff}
+
+/* appointment card + tiles */
+.book{position:relative;z-index:5;margin-top:-112px}
+.book-card{background:#fff;border-radius:14px;padding:26px 28px 24px;border:1px solid var(--line);box-shadow:0 22px 44px -26px rgba(7,58,54,.5)}
+.book-card h2{font-size:24px;margin-bottom:16px}
+.book-row{display:grid;grid-template-columns:1.5fr 1fr auto;gap:12px}
+.fld{position:relative}
+.fld input,.fld select,.fld textarea{width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:10px;font:inherit;font-size:16.5px;background:#f8fbfa;color:var(--ink);appearance:none;-webkit-appearance:none}
+.fld select{background-image:linear-gradient(45deg,transparent 50%,var(--teal) 50%),linear-gradient(135deg,var(--teal) 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:38px}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--teal);background:#fff}
+.fld label{display:block;font-size:14px;font-weight:600;color:var(--muted);margin-bottom:5px}
+.tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:14px}
+.tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:20px 10px 16px;border-radius:12px;background:#fff;border:1px solid var(--line);font-weight:600;color:var(--teal-d);transition:background .15s,border-color .15s}
+.tile:hover{background:var(--gold-l);border-color:var(--gold)}
+.tile svg{width:44px;height:44px;fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tile small{display:block;font-weight:500;color:var(--muted);font-size:13.5px;margin-top:-6px}
+
+/* sections */
+.sec{padding:92px 0}.spec-grid>*,.two>*,.cath .grid>*,.ayush .grid>*,.faq .grid>*,.slide .wrap>*{min-width:0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:34px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(30px,3.8vw,48px);max-width:16em}
+.sec-head p{color:var(--muted);max-width:34em;margin-top:10px}
+
+/* specialities */
+.tabs{display:flex;gap:6px;border-bottom:1.5px solid var(--line);margin-bottom:26px}
+.tabs button{background:none;border:0;padding:12px 20px;font-weight:600;font-size:18px;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1.5px}
+.tabs button[aria-selected="true"]{color:var(--teal-d);border-bottom-color:var(--red)}
+.spec-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:stretch}
+.lists{display:grid;grid-template-columns:1fr 1fr;column-gap:34px}
+.lists a{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-weight:600;font-size:17.5px;color:var(--teal-d)}
+.lists a:hover{color:var(--red)}
+.lists .ico{width:38px;height:38px;flex:none;fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lists a:hover .ico{stroke:var(--red)}
+.lists span small{display:block;font-weight:500;color:var(--muted);font-size:14px;line-height:1.3}
+.expert{background:var(--teal);color:#fff;border-radius:18px;padding:36px 34px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:420px}
+.expert h3{color:#fff;font-size:34px;max-width:9em}
+.expert p{color:#cfe6e1;margin:12px 0 22px;max-width:22em}
+.expert svg{position:absolute;right:-16px;bottom:-6px;width:62%;fill:none;stroke:#7fd1c7;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+.expert .acc{stroke:var(--gold)}
+.expert .btn{align-self:flex-start;position:relative}
+
+/* cath lab */
+.cath{background:var(--teal-d);color:#d6ebe6}
+.cath .grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.cath h2{color:#fff;font-size:clamp(32px,4.2vw,54px)}
+.cath p.lead{margin:18px 0 28px;font-size:18.5px;max-width:30em}
+.steps{list-style:none;counter-reset:s;display:grid}
+.steps li{counter-increment:s;display:grid;grid-template-columns:62px 1fr;gap:16px;padding:22px 0;border-top:1px solid rgba(255,255,255,.16)}
+.steps li:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+.steps li::before{content:counter(s);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:44px;line-height:1;color:var(--gold)}
+.steps b{display:block;color:#fff;font-size:20px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;margin-bottom:4px}
+
+/* doctors */
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-weight:600;color:var(--teal-d)}
+.chips button[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.docs{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:6px}
+.doc{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.doc .ph{background:var(--mint);aspect-ratio:1/.82;display:grid;place-items:end center;position:relative;overflow:hidden}
+.doc .ph::before{content:"";position:absolute;width:62%;aspect-ratio:1;border-radius:50%;background:var(--gold-s);bottom:-14%}
+.doc .ph svg{position:relative;width:70%;fill:none;stroke:var(--teal);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.doc .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:3px;flex:1}
+.doc h3{font-size:21px}
+.doc .role{color:var(--teal-m);font-weight:600;font-size:15.5px}
+.doc .q{color:var(--muted);font-size:15px}
+.doc .btn{margin-top:14px;padding:10px 16px;font-size:15px}
+.none{display:none;padding:34px;border:1.5px dashed var(--line);border-radius:12px;color:var(--muted);text-align:center;grid-column:1/-1}
+.note{font-size:14px;color:var(--muted);margin-top:16px}
+
+/* ayushman */
+.ayush{background:var(--gold-l)}
+.ayush .grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:start}
+.ayush h2{font-size:clamp(32px,4.2vw,56px)}
+.ayush p{color:var(--muted);margin:16px 0 26px;font-size:18px;max-width:30em}
+.perks{list-style:none}
+.perks li{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:baseline;padding:20px 0;border-bottom:1.5px solid rgba(11,79,74,.18)}
+.perks li:first-child{border-top:1.5px solid rgba(11,79,74,.18)}
+.perks b{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;color:var(--teal-d);line-height:1.15;letter-spacing:-.01em}
+.perks span{color:var(--muted);font-size:15.5px;max-width:15em;text-align:right}
+
+/* updates */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.rows{list-style:none}
+.rows li a{display:grid;grid-template-columns:1fr auto;gap:18px;padding:20px 0;border-bottom:1px solid var(--line);align-items:center}
+.rows li:first-child a{border-top:1px solid var(--line)}
+.rows h3{font-size:22px;margin-bottom:4px}
+.rows p{color:var(--muted);font-size:16px}
+.rows a:hover h3{color:var(--red)}
+.rows .go{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--teal)}
+.rows a:hover .go{background:var(--teal);color:#fff;border-color:var(--teal)}
+.sub{font-size:28px;margin-bottom:16px}
+
+/* stories */
+.stories{background:var(--mint)}
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.story{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.story .thumb{aspect-ratio:16/9;background:var(--teal);display:grid;place-items:center;position:relative}
+.story .thumb svg{width:54px;height:54px;fill:none;stroke:#fff;stroke-width:2.4}
+.story .thumb em{position:absolute;left:12px;top:12px;font-style:normal;background:var(--gold);color:var(--teal-d);font-size:13px;font-weight:700;padding:3px 10px;border-radius:999px}
+.story .body{padding:18px 20px 22px}
+.story h3{font-size:20px}
+.story p{color:var(--muted);font-size:15.5px;margin-top:4px}
+
+/* find us */
+.find{display:grid;grid-template-columns:1.3fr 1fr;gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.find iframe{width:100%;height:100%;min-height:440px;border:0;display:block;background:var(--mint)}
+.find .info{padding:38px 38px 34px;background:#fff}
+.find h2{font-size:34px;margin-bottom:22px}
+.find dl{display:grid;gap:18px}
+.find dt{font-size:14.5px;color:var(--muted);font-weight:600}
+.find dd{font-size:18px}
+.find .big{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:34px;color:var(--red);letter-spacing:-.02em}
+.find .btn{margin-top:26px}
+
+/* faq */
+.faq .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font-weight:600;font-size:19px;color:var(--teal-d)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:28px;line-height:1;color:var(--red);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 24px;color:var(--muted);max-width:40em}
+
+/* footer */
+footer{background:var(--teal-d);color:#b9d5cf;padding:72px 0 0;font-size:16px}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.2fr;gap:36px}
+footer h4{color:#fff;font-size:17px;margin-bottom:14px}
+footer ul{list-style:none;display:grid;gap:9px}
+footer a:hover{color:#fff;text-decoration:underline}
+.f-logo{background:#fff;border-radius:12px;padding:10px 14px;display:inline-block;margin-bottom:16px}
+.f-logo img{height:50px;width:auto;display:block}
+footer li,.find dd{overflow-wrap:break-word}.f-grid>*{min-width:0}.compliance{border-top:1px solid rgba(255,255,255,.14);margin-top:52px;padding:22px 0;font-size:14px;color:#8fb6ae}
+.compliance .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+/* floating bits */
+.tab-em{position:fixed;left:0;top:240px;z-index:60;background:var(--red);color:#fff;writing-mode:vertical-rl;transform:rotate(180deg);padding:18px 10px;border-radius:0 10px 10px 0;font-weight:700;letter-spacing:.04em;font-size:16px;display:flex;align-items:center;gap:8px;box-shadow:0 10px 24px -10px rgba(176,27,33,.7)}
+.tab-em::before{content:"";width:9px;height:9px;border-radius:50%;background:#fff;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.25}}
+.float{position:fixed;right:18px;bottom:18px;z-index:60;display:grid;gap:10px;justify-items:end}
+.pill{display:flex;align-items:center;gap:10px;background:var(--teal);color:#fff;padding:11px 20px 11px 14px;border-radius:999px;font-weight:700;box-shadow:0 12px 26px -12px rgba(7,58,54,.8)}
+.pill i{font-style:normal;font-size:12px;background:#fff;color:var(--teal);border-radius:999px;padding:2px 7px;font-weight:800}
+.callback{background:var(--teal-d);color:#fff;border:0;padding:12px 22px;border-radius:999px;font-weight:700;box-shadow:0 12px 26px -12px rgba(7,58,54,.8)}
+.mbar{display:none}
+
+/* modal */
+dialog{border:0;border-radius:18px;padding:0;width:min(560px,calc(100% - 28px));max-height:calc(100vh - 28px);overflow:auto;margin:auto;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+dialog::backdrop{background:rgba(7,58,54,.62)}
+.m-head{display:flex;justify-content:space-between;align-items:center;padding:22px 26px 0}
+.m-head h2{font-size:28px}
+.m-x{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:22px;line-height:1}
+.m-tabs{display:flex;gap:4px;padding:14px 26px 0;border-bottom:1.5px solid var(--line);flex-wrap:wrap}
+.m-tabs button{background:none;border:0;padding:10px 12px;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1.5px;font-size:16px}
+.m-tabs button[aria-selected="true"]{color:var(--teal-d);border-bottom-color:var(--red)}
+.m-body{padding:22px 26px 28px;display:grid;gap:14px}
+.m-body .two-c{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.consent{display:flex;gap:10px;font-size:14.5px;color:var(--muted);align-items:flex-start}
+.consent input{margin-top:5px;accent-color:var(--teal);width:17px;height:17px}
+.m-done{display:none;padding:34px 26px 40px;text-align:center}
+.m-done h3{font-size:28px;margin-bottom:8px}
+.m-done p{color:var(--muted);margin-bottom:20px}
+
+/* responsive */
+@media(max-width:1100px){
+  .nav>li>a,.nav>li>button{padding:0 9px;font-size:15.5px}
+  .bar .wrap{gap:14px}
+  .docs{grid-template-columns:repeat(2,1fr)}
+  .f-grid{grid-template-columns:1fr 1fr 1fr}
+}
+@media(max-width:960px){
+  .util-links a:not(.wa){display:none}
+  .nav{position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:6px 24px 20px;border-bottom:1px solid var(--line);display:none;margin:0}
+  .nav.open{display:flex}
+  .nav>li>a,.nav>li>button{height:54px;border-bottom:1px solid var(--line);margin:0;width:100%}
+  .mega{display:none}
+  .burger{display:block}
+  .bar-cta .hide-m{display:none}
+  .slide .wrap{grid-template-columns:1fr;gap:6px;min-height:0}
+  .art{order:-1}.art svg{max-width:340px}
+  .hero{padding:34px 0 250px}
+  .sweep{bottom:176px}.controls{bottom:128px}
+  .book{margin-top:-120px}
+  .book-row{grid-template-columns:1fr}
+  .tiles{grid-template-columns:repeat(3,1fr)}
+  .spec-grid,.cath .grid,.ayush .grid,.two,.faq .grid,.find{grid-template-columns:1fr}
+  .cath .grid,.ayush .grid,.two,.faq .grid{gap:36px}
+  .expert{min-height:340px}
+  .story-grid{grid-template-columns:1fr}
+  .sec{padding:68px 0}
+}
+@media(max-width:640px){
+  body{font-size:16.5px;padding-bottom:66px}.bars button{width:34px}.bars{gap:6px}.tabs button{padding:12px 11px;font-size:16px}.expert h3{font-size:30px}
+  .wrap{padding:0 18px}
+  .ticker b{display:none}
+  .wa{display:none}
+  .logo small{display:none}
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .lists{grid-template-columns:1fr}
+  .docs{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .tab-em,.float{display:none}
+  .mbar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;border-top:1px solid var(--line)}
+  .mbar a,.mbar button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 4px;font-size:13px;font-weight:600;color:var(--teal-d);background:none;border:0}
+  .mbar svg{width:22px;height:22px;fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .mbar .em{color:var(--red)}.mbar .em svg{stroke:var(--red)}
+  .perks li{grid-template-columns:1fr}.perks span{text-align:left}
+  .m-body .two-c{grid-template-columns:1fr}
+  .find .info{padding:28px 22px}
+}
+@media(prefers-reduced-motion:reduce){
+  .slide,.slide .copy>*,.ticker span{transition:none}
+  .art svg .drawable{stroke-dashoffset:0!important;animation:none!important}
+  .sweep .beat,.tab-em::before{animation:none}
+  .bars button.on::after{animation:none;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <div class="ticker" id="ticker" aria-live="off">
+      <span class="on"><b>Ayushman Bharat</b>Free OPD for card holders and UP government employees</span>
+      <span><b>Cath Lab</b>Advanced heart diagnosis and treatment, close to home</span>
+      <span><b>Open 24×7</b>Emergency and ICU services, every day</span>
+    </div>
+    <div class="util-links">
+      <a href="#doctors">Find a doctor</a>
+      <a href="#faq">FAQs</a>
+      <a href="#contact">Contact us</a>
+      <a class="wa" href="https://wa.me/917379880000" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.2 13.9c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.5.2.5.3.1.2.1.8-.1 1.3z"/></svg>WhatsApp (24×7)</a>
+      <a href="tel:7379880000"><b style="color:#fff">73798 80000</b></a>
+    </div>
+  </div>
+</div>
+
+<header class="bar" id="top">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Astha Hospital & Heart Center, home">
+      <div class="logo-mark"><img src="https://asthahearthospital.com/wp-content/uploads/2026/01/favicon-300x300.webp" alt="" width="46" height="46" onload="this.parentElement.style.background='transparent'" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg style="display:none" width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 5 6 5c2.1 0 3.4 1.2 4 2.2h4c.6-1 1.9-2.2 4-2.2 3.4 0 5.1 3.4 3.6 6.8C19.5 16.4 12 21 12 21z" transform="translate(0 -1)"/></svg></div>
+      <div><b>Astha Hospital</b><small>& Heart Center, Sultanpur</small></div>
+    </a>
+    <ul class="nav" id="nav">
+      <li>
+        <button type="button" aria-haspopup="true">Treatments <i class="caret"></i></button>
+        <div class="mega"><div class="wrap">
+          <div><h4>Heart care</h4><ul data-fill="heart"></ul></div>
+          <div><h4>Specialities</h4><ul data-fill="spec"></ul></div>
+          <div><h4>Procedures</h4><ul data-fill="proc"></ul></div>
+          <div class="promo"><h4>Advanced Cath Lab</h4><p>Accurate heart diagnosis and safe treatment, under an interventional cardiologist.</p><a class="btn btn-gold" href="#cathlab">How it works</a></div>
+        </div></div>
+      </li>
+      <li>
+        <button type="button" aria-haspopup="true">Services <i class="caret"></i></button>
+        <div class="mega"><div class="wrap">
+          <div><h4>Emergency and critical care</h4><ul><li><a href="#contact">24×7 emergency</a></li><li><a href="#specialities">ICU and critical care</a></li></ul></div>
+          <div><h4>Diagnostics</h4><ul><li><a href="#specialities">ECG and Echo</a></li><li><a href="#specialities">TMT</a></li><li><a href="#cathlab">Angiography</a></li></ul></div>
+          <div><h4>Patient support</h4><ul><li><a href="#ayushman">Ayushman Bharat desk</a></li><li><a href="#ayushman">Free OPD offers</a></li><li><a href="#contact">Second opinion</a></li></ul></div>
+          <div class="promo"><h4>Ayushman Bharat</h4><p>Cashless treatment under PM-JAY, as per government guidelines.</p><a class="btn btn-gold" href="#ayushman">See benefits</a></div>
+        </div></div>
+      </li>
+      <li><a href="#doctors">Doctors</a></li>
+      <li><a href="#ayushman">Ayushman Bharat</a></li>
+      
+    </ul>
+    <div class="bar-cta">
+      <button class="sbtn" id="sbtn" aria-label="Search doctors or treatments" type="button"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+      <a class="btn btn-red hide-m" href="tel:7379880000">Emergency</a>
+      <button class="btn btn-teal hide-m" data-open="appointment" type="button">Book an appointment</button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" type="button">☰</button>
+    </div>
+  </div>
+  <div class="search-pop" id="spop"><div class="wrap"><input id="gsearch" type="search" placeholder="Search a doctor or speciality, then press Enter" aria-label="Search a doctor or speciality" autocomplete="off"></div></div>
+</header>
+
+<main>
+<section class="hero" id="hero" aria-roledescription="carousel" aria-label="Featured">
+  <div class="slides">
+
+    <!-- 1. Hospital front -->
+    <div class="slide on">
+      <div class="wrap">
+        <div class="copy"><h1>Heart care that stays close to home.</h1><p class="hindi">आपके दिल की देखभाल, आपके अपने शहर में।</p><p class="lead">A multi-speciality hospital in Sultanpur with an advanced Cath Lab, a 24×7 ICU and qualified specialists, at honest prices.</p><div class="hero-actions"><button class="btn btn-red" data-open="appointment" type="button">Book an appointment</button><a class="btn btn-line" href="tel:7379880000">Call 73798 80000</a></div></div>
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 520 400">
+            <path d="M20 350H500"/>
+            <rect x="120" y="120" width="280" height="230"/>
+            <rect x="220" y="70" width="80" height="50"/>
+            <path class="acc" d="M260 80V110M245 95H275"/>
+            <path d="M145 140h28v28h-28z M185 140h28v28h-28z M307 140h28v28h-28z M347 140h28v28h-28z M145 182h28v28h-28z M185 182h28v28h-28z M307 182h28v28h-28z M347 182h28v28h-28z M145 224h28v28h-28z M185 224h28v28h-28z M307 224h28v28h-28z M347 224h28v28h-28z"/>
+            <rect x="160" y="262" width="200" height="26"/>
+            <path d="M200 300H320 M215 300v50 M305 300v50"/>
+            <rect x="225" y="306" width="70" height="44"/>
+            <path d="M260 306V350"/>
+            <path d="M120 120L100 135 M400 120L420 135"/>
+            <rect x="415" y="316" width="62" height="34"/>
+            <path d="M477 328h14l9 10v12h-23"/>
+            <circle cx="436" cy="350" r="7"/><circle cx="470" cy="350" r="7"/>
+            <path class="acc" d="M440 326v14M433 333h14"/>
+            <circle cx="70" cy="296" r="28"/><path d="M70 324V350 M70 308L58 296 M70 316L84 302"/>
+            <circle cx="30" cy="326" r="14"/><path d="M30 340V350"/>
+            <circle cx="448" cy="78" r="20"/>
+            <path d="M300 62c10-12 30-8 32 6 14-2 22 14 8 20h-62c-14-2-12-20 4-20 4-8 12-10 18-6z" opacity=".6"/>
+            <text x="260" y="280" text-anchor="middle" class="sign">ASTHA HOSPITAL</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Doctors -->
+    <div class="slide">
+      <div class="wrap">
+        <div class="copy"><h2 class="h1">Specialists who explain every step.</h2><p class="hindi">अनुभवी डॉक्टर, भरोसेमंद इलाज।</p><p class="lead">Interventional cardiology, nephrology and ENT, with doctors who take the time to talk with you and your family.</p><div class="hero-actions"><a class="btn btn-red" href="#doctors">Find a doctor</a><button class="btn btn-line" data-open="appointment" type="button">Book an appointment</button></div></div>
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 520 400">
+            <path d="M20 350H500"/>
+            <!-- doctor A -->
+            <circle cx="180" cy="120" r="34"/>
+            <path d="M150 112c4-22 38-30 60-8"/>
+            <path d="M110 350V235Q110 178 180 178Q250 178 250 235V350"/>
+            <path d="M158 182L180 222 202 182"/>
+            <path d="M180 222V350"/>
+            <path class="acc" d="M150 190C132 240 160 268 188 262"/>
+            <circle class="acc" cx="190" cy="262" r="6"/>
+            <path d="M152 190c-6-12 0-20 8-22 M208 190c6-12 0-20-8-22"/>
+            <path class="acc" d="M214 250v16M206 258h16"/>
+            <!-- doctor B -->
+            <circle cx="350" cy="150" r="30"/>
+            <path d="M322 146c4-20 40-24 56-2"/>
+            <path d="M286 350V262Q286 208 350 208Q414 208 414 262V350"/>
+            <path d="M330 212L350 246 370 212"/>
+            <rect x="372" y="262" width="44" height="58" rx="4"/>
+            <path d="M380 278h28M380 290h28M380 302h18"/>
+            <path d="M372 276L350 290"/>
+            <!-- heart + pulse -->
+            <path class="acc" d="M440 90c-18-14-30-26-30-38 0-10 8-16 16-16 6 0 11 4 14 9 3-5 8-9 14-9 8 0 16 6 16 16 0 12-12 24-30 38z"/>
+            <polyline points="60,70 100,70 112,50 126,92 138,62 150,70 200,70" opacity=".7"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Cath lab -->
+    <div class="slide">
+      <div class="wrap">
+        <div class="copy"><h2 class="h1">A Cath Lab for accurate answers, nearby.</h2><p class="hindi">सही जाँच, सुरक्षित इलाज।</p><p class="lead">Angiography and angioplasty under an interventional cardiologist, so a heart scare does not mean a long journey.</p><div class="hero-actions"><a class="btn btn-red" href="#cathlab">See how it works</a><button class="btn btn-line" data-open="appointment" type="button">Talk to a cardiologist</button></div></div>
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 520 400">
+            <path class="acc" d="M260 330C130 250 96 188 96 142C96 100 128 74 164 74C204 74 240 100 260 132C280 100 316 74 356 74C392 74 424 100 424 142C424 188 390 250 260 330Z"/>
+            <polyline points="40,200 150,200 182,200 204,146 230,268 254,178 274,200 480,200"/>
+            <path d="M470 350C400 322 340 280 300 232"/>
+            <circle cx="300" cy="232" r="7"/>
+            <circle cx="470" cy="350" r="10"/>
+            <path d="M60 350H460" opacity=".5"/>
+            <path d="M80 120a110 110 0 0 0 0 150" opacity=".6"/>
+            <circle cx="80" cy="120" r="9" opacity=".6"/><circle cx="80" cy="270" r="9" opacity=".6"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ICU & Emergency -->
+    <div class="slide">
+      <div class="wrap">
+        <div class="copy"><h2 class="h1">Emergency and ICU, open every hour.</h2><p class="hindi">आपातकालीन सेवा, 24×7।</p><p class="lead">Trained staff and life-saving equipment, day and night. Call before you travel so the team is ready.</p><div class="hero-actions"><a class="btn btn-red" href="tel:7379880000">Call 73798 80000</a><a class="btn btn-line" href="#specialities">Our facilities</a></div></div>
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 520 400">
+            <path d="M30 346H490"/>
+            <!-- bed -->
+            <rect x="90" y="250" width="240" height="24" rx="4"/>
+            <path d="M90 274V330 M330 274V330"/>
+            <path d="M70 200V274 M70 200H90"/>
+            <path d="M100 250c0-18 30-18 50-18"/>
+            <circle cx="90" cy="338" r="8"/><circle cx="330" cy="338" r="8"/>
+            <path d="M170 250c20-30 90-30 130 0" opacity=".6"/>
+            <!-- IV -->
+            <path d="M120 110V250 M120 110H160"/>
+            <rect class="acc" x="148" y="122" width="26" height="44" rx="5"/>
+            <path d="M161 166C161 205 205 215 220 248"/>
+            <!-- monitor -->
+            <rect x="360" y="116" width="116" height="84" rx="6"/>
+            <polyline class="acc" points="372,162 394,162 404,138 418,184 428,162 464,162"/>
+            <path d="M418 200V250 M392 250H444"/>
+            <!-- 24x7 clock -->
+            <circle cx="420" cy="300" r="34"/>
+            <text x="420" y="306" text-anchor="middle" class="sign">24×7</text>
+            <path class="acc" d="M250 80v30M235 95h30"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Facilities -->
+    <div class="slide">
+      <div class="wrap">
+        <div class="copy"><h2 class="h1">Seven departments under one roof.</h2><p class="hindi">एक ही छत के नीचे संपूर्ण इलाज।</p><p class="lead">Cardiology, Nephrology, ENT, Orthopaedics, Gynaecology, General Surgery and Urology, working together for you.</p><div class="hero-actions"><a class="btn btn-red" href="#specialities">Browse treatments</a><a class="btn btn-line" href="#ayushman">Ayushman Bharat benefits</a></div></div>
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 520 400">
+            <!-- row 1 -->
+            <circle cx="100" cy="120" r="38"/><circle cx="210" cy="120" r="38"/><circle cx="320" cy="120" r="38"/><circle cx="430" cy="120" r="38"/>
+            <!-- row 2 -->
+            <circle cx="155" cy="250" r="38"/><circle cx="265" cy="250" r="38"/><circle cx="375" cy="250" r="38"/>
+            <!-- icons -->
+            <g transform="translate(100 120)"><path class="acc" d="M0 18C-22 4-22-14-10-14C-4-14 0-9 0-6C0-9 4-14 10-14C22-14 22 4 0 18Z"/></g>
+            <g transform="translate(210 120)"><path d="M0-18C18 4 14 18 0 18C-14 18-18 4 0-18Z"/></g>
+            <g transform="translate(320 120)"><path d="M-8 16C-8 6-16 4-16-6C-16-16-8-20 0-20C10-20 16-14 16-6C16 2 8 4 8 10"/><path d="M-4-4C-4-10 6-10 6-4C6 0 0 2 0 6"/></g>
+            <g transform="translate(430 120)"><path d="M-12 12L12-12"/><circle cx="-16" cy="12" r="4"/><circle cx="-12" cy="16" r="4"/><circle cx="16" cy="-12" r="4"/><circle cx="12" cy="-16" r="4"/></g>
+            <g transform="translate(155 250)"><circle cx="0" cy="-10" r="7"/><path d="M-14 18C-14 4-8 0 0 0C8 0 14 4 14 18"/></g>
+            <g transform="translate(265 250)"><path d="M-14 14L6-6"/><path d="M6-6L14-16L16-4Z"/></g>
+            <g transform="translate(375 250)"><path d="M0-16V-4"/><path d="M-12 6C-12-4 12-4 12 6C12 14-12 14-12 6Z"/></g>
+            <!-- labels -->
+            <text x="100" y="182" text-anchor="middle" class="lbl">Cardiology</text>
+            <text x="210" y="182" text-anchor="middle" class="lbl">Nephrology</text>
+            <text x="320" y="182" text-anchor="middle" class="lbl">ENT</text>
+            <text x="430" y="182" text-anchor="middle" class="lbl">Orthopaedics</text>
+            <text x="155" y="312" text-anchor="middle" class="lbl">Gynaecology</text>
+            <text x="265" y="312" text-anchor="middle" class="lbl">Surgery</text>
+            <text x="375" y="312" text-anchor="middle" class="lbl">Urology</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  
+  <div class="sweep" aria-hidden="true"><svg viewBox="0 0 1000 84" preserveAspectRatio="none"><path class="base" d="M0 42H180L200 42L212 20L228 70L242 8L256 42H430L450 42L462 22L478 66L492 12L506 42H700L720 42L732 20L748 70L762 8L776 42H1000"/><path class="beat" pathLength="1000" d="M0 42H180L200 42L212 20L228 70L242 8L256 42H430L450 42L462 22L478 66L492 12L506 42H700L720 42L732 20L748 70L762 8L776 42H1000"/></svg></div>
+  <div class="controls"><div class="wrap"><div class="bars" id="bars"></div><div class="arrows"><button id="prev" aria-label="Previous slide" type="button">‹</button><button id="next" aria-label="Next slide" type="button">›</button></div></div></div>
+</section>
+
+<!-- appointment + tiles -->
+<section class="book" aria-label="Book online">
+  <div class="wrap">
+    <div class="book-card">
+      <h2>Schedule your appointment online</h2>
+      <form class="book-row" id="quickbook">
+        <div class="fld"><input id="qsearch" type="search" placeholder="Search for a doctor or speciality" aria-label="Doctor or speciality" autocomplete="off"></div>
+        <div class="fld"><select id="qtype" aria-label="What do you need?"><option value="appointment">Doctor appointment</option><option value="second">Second opinion</option><option value="checkup">Health checkup</option><option value="query">General query</option></select></div>
+        <button class="btn btn-teal" type="submit">Book an appointment</button>
+      </form>
+      <div class="tiles">
+        <button class="tile" data-open="checkup" type="button"><svg viewBox="0 0 48 48"><path d="M14 6v14a8 8 0 0016 0V6M10 6h8M26 6h8"/><path d="M22 28v6a6 6 0 0012 0v-3"/><circle cx="34" cy="27" r="3"/></svg>Health checkup</button>
+        <button class="tile" data-open="second" type="button"><svg viewBox="0 0 48 48"><circle cx="18" cy="16" r="7"/><path d="M5 40c0-9 6-13 13-13s13 4 13 13"/><path d="M34 14h9M38.5 9.5v9"/></svg>Second opinion</button>
+        <a class="tile" href="#ayushman"><svg viewBox="0 0 48 48"><path d="M24 5l16 6v12c0 10-7 16-16 20C15 39 8 33 8 23V11z"/><path d="M17 24l5 5 9-10"/></svg>Ayushman card<small>Cashless care</small></a>
+        <a class="tile" href="#cathlab"><svg viewBox="0 0 48 48"><path d="M24 40C10 31 6 24 6 17c0-5 4-9 9-9 4 0 7 2 9 5 2-3 5-5 9-5 5 0 9 4 9 9 0 7-4 14-18 23z"/><path d="M8 24h9l3-6 4 12 3-8 2 2h11"/></svg>Cath Lab</a>
+        <a class="tile" href="#contact"><svg viewBox="0 0 48 48"><path d="M24 43S10 30 10 19a14 14 0 0128 0c0 11-14 24-14 24z"/><circle cx="24" cy="19" r="5"/></svg>Find us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- specialities -->
+<section class="sec" id="specialities">
+  <div class="wrap">
+    <div class="sec-head"><div><h2>Treatments, procedures and conditions we handle</h2></div></div>
+    <div class="spec-grid">
+      <div>
+        <div class="tabs" role="tablist" id="stabs">
+          <button role="tab" aria-selected="true" data-t="spec" type="button">Specialities</button>
+          <button role="tab" aria-selected="false" data-t="proc" type="button">Procedures</button>
+          <button role="tab" aria-selected="false" data-t="cond" type="button">Conditions</button>
+        </div>
+        <div class="lists" id="slist" role="tabpanel"></div>
+      </div>
+      <aside class="expert">
+        <div>
+          <h3>Looking for an expert?</h3>
+          <p>Our cardiologists, nephrologist and ENT surgeon see patients every day. Find the right doctor for you.</p>
+        </div>
+        <svg viewBox="0 0 300 240" aria-hidden="true"><path d="M20 220H290"/><rect x="40" y="130" width="150" height="14" rx="3"/><path d="M56 144v76M174 144v76"/><rect class="acc" x="70" y="84" width="62" height="46" rx="4"/><path d="M101 130v0M84 106h34M84 118h20"/><circle cx="230" cy="70" r="20"/><path d="M200 124c0-24 14-34 30-34s30 10 30 34v96M214 100l16 26 16-26"/><path class="acc" d="M214 112c-10 22 6 36 20 32"/></svg>
+        <a class="btn btn-gold" href="#doctors">Find a doctor</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- cath lab -->
+<section class="sec cath" id="cathlab">
+  <div class="wrap grid">
+    <div>
+      <h2>A Cath Lab for accurate answers, close to home</h2>
+      <p class="hindi" style="color:var(--gold);font-weight:600;margin-top:12px;font-size:20px">सही जाँच, सुरक्षित इलाज।</p>
+      <p class="lead">Chest pain, breathlessness or an abnormal ECG need clear answers fast. Our Cath Lab lets an interventional cardiologist see your arteries and treat a blockage in the same hospital, without a long journey.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-gold" data-open="appointment" type="button">Talk to a cardiologist</button><a class="btn btn-white" href="tel:7379880000">Call 73798 80000</a></div>
+    </div>
+    <ol class="steps">
+      <li><div><b>Check your heart</b>ECG, Echo and a TMT show how your heart is working and whether you need further tests.</div></li>
+      <li><div><b>See the arteries</b>Angiography maps the blood vessels so the doctor can find any blockage.</div></li>
+      <li><div><b>Open the blockage, if needed</b>Angioplasty treats a blocked artery. Your cardiologist explains the options before any procedure.</div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- doctors -->
+<section class="sec" id="doctors">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2>Doctors you can book today</h2><p>Choose a speciality, or type a name in the search box above.</p></div>
+      <div class="chips" id="dchips" role="group" aria-label="Filter doctors by speciality"></div>
+    </div>
+    <div class="docs" id="docs"></div>
+    <p class="note">Doctor photos are placeholders. The hospital's own photos will replace them.</p>
+  </div>
+</section>
+
+<!-- ayushman -->
+<section class="sec ayush" id="ayushman">
+  <div class="wrap grid">
+    <div>
+      <h2>Ayushman Bharat card holders are treated here</h2>
+      <p>Cashless treatment under PM-JAY follows government guidelines. Visit our help desk to check your eligibility and the documents you need. UP state government employees get OPD benefits too.</p>
+      <button class="btn btn-teal" data-open="query" type="button">Ask about eligibility</button>
+    </div>
+    <ul class="perks">
+      <li><b>Free OPD</b><span>For Ayushman card holders and UP state government employees</span></li>
+      <li><b>10% off OPD fees</b><span>Applies on consultation fees</span></li>
+      <li><b>Special rates on tests</b><span>Angiography, angioplasty, TMT and Echo</span></li>
+      <li><b>Free treatment</b><span>Under Ayushman Bharat Yojana</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- updates + reads -->
+<section class="sec">
+  <div class="wrap two">
+    <div>
+      <h2 class="sub">Hospital updates</h2>
+      <ul class="rows">
+        <li><a href="#cathlab"><div><h3>Advanced Cath Lab</h3><p>Accurate diagnosis and safe treatment for heart patients in Sultanpur.</p></div><span class="go">›</span></a></li>
+        <li><a href="#ayushman"><div><h3>Free OPD for Ayushman card holders</h3><p>Also open to UP state government employees.</p></div><span class="go">›</span></a></li>
+        <li><a href="#contact"><div><h3>Emergency and ICU, 24×7</h3><p>Trained staff and life-saving equipment, day and night.</p></div><span class="go">›</span></a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="sub">Health reads</h2>
+      <ul class="rows">
+        <li><a href="#faq"><div><h3>Heart attack warning signs not to ignore</h3><p>Chest pressure, pain spreading to the arm or jaw, sweating, breathlessness.</p></div><span class="go">›</span></a></li>
+        <li><a href="#faq"><div><h3>How often should you check your blood pressure?</h3><p>A simple routine that catches problems early.</p></div><span class="go">›</span></a></li>
+        <li><a href="#ayushman"><div><h3>Using your Ayushman card at our hospital</h3><p>What to bring and where to go first.</p></div><span class="go">›</span></a></li>
+      </ul>
+      <p class="note">Sample article titles. The hospital's own health articles will go here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- stories -->
+<section class="sec stories">
+  <div class="wrap">
+    <div class="sec-head"><div><h2>Patient stories</h2><p>Short video stories from patients and families, in their own words.</p></div></div>
+    <div class="story-grid">
+      <article class="story"><div class="thumb"><em>Placeholder</em><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="19"/><path d="M20 16l13 8-13 8z"/></svg></div><div class="body"><h3>Angioplasty recovery</h3><p>Patient name, village, district</p></div></article>
+      <article class="story"><div class="thumb"><em>Placeholder</em><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="19"/><path d="M20 16l13 8-13 8z"/></svg></div><div class="body"><h3>Kidney care close to home</h3><p>Patient name, village, district</p></div></article>
+      <article class="story"><div class="thumb"><em>Placeholder</em><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="19"/><path d="M20 16l13 8-13 8z"/></svg></div><div class="body"><h3>Treated under Ayushman Bharat</h3><p>Patient name, village, district</p></div></article>
+    </div>
+    <p class="note">Layout sample only. Real stories need each patient's written consent.</p>
+  </div>
+</section>
+
+<!-- find us -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="find">
+      <iframe title="Map of Astha Hospital & Heart Center, Sultanpur" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Astha+Hospital+and+Heart+Center+Sultanpur&output=embed"></iframe>
+      <div class="info">
+        <h2>Find us in Sultanpur</h2>
+        <dl>
+          <div><dt>Emergency and appointments</dt><dd class="big"><a href="tel:7379880000">73798 80000</a></dd></div>
+          <div><dt>Address</dt><dd>Faizabad - Allahabad Rd, Gomti Nagar, Sultanpur, Uttar Pradesh 228118</dd></div>
+          <div><dt>Email</dt><dd>asthahospital34053@gmail.com</dd></div>
+        </dl>
+        <a class="btn btn-teal" href="https://maps.app.goo.gl/12E9X9UX1nDf9EjS7" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- faq -->
+<section class="sec faq" id="faq" style="padding-top:20px">
+  <div class="wrap grid">
+    <div><h2>Questions patients ask us</h2><p style="color:var(--muted);margin-top:12px">Something else? Call 73798 80000.</p></div>
+    <div>
+      <details open><summary>Which services does the hospital provide?</summary><p>Cardiology, Nephrology (kidney diseases), ENT, Orthopaedics, Obstetrics & Gynaecology, General Surgery, Urology, ICU, emergency and diagnostic services.</p></details>
+      <details><summary>Can I get all my heart problems treated here?</summary><p>Yes. We handle diagnosis of heart disease, angiography, angioplasty and ECG, along with treatment for blood pressure, cholesterol and irregular heartbeat.</p></details>
+      <details><summary>Are emergency and ICU services available 24×7?</summary><p>Yes. Emergency and ICU services run round the clock with advanced life-saving equipment and trained personnel.</p></details>
+      <details><summary>Does the hospital accept Ayushman Bharat cards?</summary><p>Yes. Ayushman Bharat (PM-JAY) holders are entitled to cashless treatment as per government guidelines. Ask at the help desk about eligibility and documents.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <div class="f-logo"><img src="https://asthahearthospital.com/wp-content/uploads/2024/05/small-logo.webp" alt="Astha Hospital, since 2001" onerror="this.replaceWith(document.createTextNode('Astha Hospital & Heart Center'))"></div>
+        <p>A trusted multi-speciality hospital committed to honest, affordable and patient-friendly care since 2001.</p>
+      </div>
+      <div><h4>Facilities</h4><ul data-fill="spec"></ul></div>
+      <div><h4>Procedures</h4><ul data-fill="proc"></ul></div>
+      <div><h4>For patients</h4><ul><li><a href="#doctors">Find a doctor</a></li><li><a href="#ayushman">Ayushman Bharat</a></li><li><a href="#faq">FAQs</a></li><li><a href="#contact">Directions</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>Gomti Nagar, Sultanpur, UP 228118</li><li><a href="tel:7379880000">73798 80000</a></li><li>asthahospital34053@gmail.com</li></ul></div>
+    </div>
+  </div>
+  <div class="compliance"><div class="wrap"><span>Information on this site is general and does not replace advice from your doctor. In an emergency, call 73798 80000.</span><span>© 2026 Astha Hospital & Heart Center · Design sample for client review</span></div></div>
+</footer>
+
+<a class="tab-em" href="tel:7379880000">Emergency 24×7</a>
+<div class="float">
+  <a class="pill" href="tel:7379880000"><i>24×7</i>73798 80000</a>
+  <button class="callback" data-open="appointment" type="button">Call back</button>
+</div>
+<nav class="mbar" aria-label="Quick actions">
+  <a href="#doctors"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Doctors</a>
+  <button data-open="appointment" type="button"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>Book</button>
+  <a href="https://wa.me/917379880000"><svg viewBox="0 0 24 24"><path d="M4 20l1.2-4A8 8 0 118 19z"/></svg>Chat</a>
+  <a class="em" href="tel:7379880000"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>Call</a>
+</nav>
+
+<dialog id="modal" aria-labelledby="mtitle">
+  <div id="mform">
+    <div class="m-head"><h2 id="mtitle">Request a call back</h2><button class="m-x" id="mx" aria-label="Close" type="button">×</button></div>
+    <div class="m-tabs" role="tablist" id="mtabs">
+      <button role="tab" data-m="appointment" type="button">Appointment</button>
+      <button role="tab" data-m="second" type="button">Second opinion</button>
+      <button role="tab" data-m="checkup" type="button">Health checkup</button>
+      <button role="tab" data-m="query" type="button">Query</button>
+    </div>
+    <form class="m-body" id="mf">
+      <div class="two-c">
+        <div class="fld"><label for="mn">Full name</label><input id="mn" required autocomplete="name"></div>
+        <div class="fld"><label for="mp">Mobile number</label><input id="mp" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required placeholder="10 digits" autocomplete="tel"></div>
+      </div>
+      <div class="fld"><label for="ms">Speciality or doctor</label><select id="ms"></select></div>
+      <div class="fld"><label for="mm">Message (optional)</label><textarea id="mm" rows="3"></textarea></div>
+      <label class="consent"><input type="checkbox" required> I agree to be contacted by Astha Hospital about this request.</label>
+      <button class="btn btn-red" type="submit">Request call back</button>
+    </form>
+  </div>
+  <div class="m-done" id="mdone"><h3>Request received</h3><p>This is a design sample, so nothing was sent. On the live site, our team would call you back shortly.</p><button class="btn btn-teal" id="mclose" type="button">Close</button></div>
+</dialog>
+
+<script>
+/* ---------- data ---------- */
+var I={
+ heart:'<path d="M24 40C10 31 6 24 6 17c0-5 4-9 9-9 4 0 7 2 9 5 2-3 5-5 9-5 5 0 9 4 9 9 0 7-4 14-18 23z"/>',
+ drop:'<path d="M24 6c10 12 14 19 14 25a14 14 0 01-28 0c0-6 4-13 14-25z"/>',
+ ear:'<path d="M18 40c0-6-8-8-8-18 0-8 6-14 14-14s14 6 14 14c0 7-6 9-6 14 0 3-3 5-6 4"/><path d="M20 20c0-4 8-4 8 1 0 4-5 5-5 9"/>',
+ bone:'<path d="M13 35L35 13"/><circle cx="11" cy="33" r="4"/><circle cx="15" cy="38" r="4"/><circle cx="33" cy="10" r="4"/><circle cx="38" cy="15" r="4"/>',
+ mother:'<circle cx="24" cy="14" r="6"/><path d="M10 42c0-12 6-16 14-16s14 4 14 16"/><path d="M19 34c0 4 10 4 10 0"/>',
+ scalpel:'<path d="M8 40L28 20"/><path d="M28 20L40 8l-2 16-14 14z"/>',
+ uro:'<path d="M24 8v12"/><path d="M12 32c0-11 24-11 24 0 0 9-24 9-24 0z"/>',
+ icu:'<rect x="6" y="10" width="36" height="24" rx="3"/><path d="M11 23h6l3-6 5 12 3-6h9"/><path d="M24 34v6M16 40h16"/>',
+ pulse:'<path d="M4 24h10l4-10 6 20 5-14 3 4h12"/>',
+ test:'<rect x="9" y="7" width="30" height="34" rx="3"/><path d="M16 17h16M16 25h16M16 33h9"/>'
+};
+function ico(k){return '<svg class="ico" viewBox="0 0 48 48" aria-hidden="true">'+I[k]+'</svg>'}
+var SPEC=[
+ ['Cardiology','हृदय रोग','heart','Cardiology'],['Nephrology (Kidney)','किडनी रोग','drop','Nephrology'],
+ ['ENT','कान, नाक, गला','ear','ENT'],['Orthopaedics','हड्डी व जोड़','bone',''],
+ ['Obstetrics & Gynaecology','स्त्री रोग व प्रसूति','mother',''],['General Surgery','सामान्य सर्जरी','scalpel',''],
+ ['Urology','मूत्र रोग','uro',''],['ICU & Critical Care','आईसीयू','icu','']];
+var PROC=[
+ ['Angiography','एंजियोग्राफी','heart','Cardiology'],['Angioplasty','एंजियोप्लास्टी','heart','Cardiology'],
+ ['TMT (treadmill test)','ट्रेडमिल टेस्ट','pulse','Cardiology'],['Echo','इको जाँच','pulse','Cardiology'],['ECG','ईसीजी','pulse','Cardiology']];
+var COND=[
+ ['Heart disease','हृदय रोग','heart','Cardiology'],['High blood pressure','उच्च रक्तचाप','pulse','Cardiology'],
+ ['High cholesterol','कोलेस्ट्रॉल','test','Cardiology'],['Irregular heartbeat','अनियमित धड़कन','pulse','Cardiology'],
+ ['Kidney disease','किडनी रोग','drop','Nephrology'],['Ear, nose and throat problems','कान, नाक, गले के रोग','ear','ENT']];
+var DOCS=[
+ {n:'Dr. K. C. Tripathi',r:'Interventional Cardiologist',q:'MD Medicine (Gold Medalist)',s:'Cardiology'},
+ {n:'Dr. Gaurav Pandey',r:'Cardiologist',q:'MD, DM (Cardiology)',s:'Cardiology'},
+ {n:'Dr. Pankaj Pandey',r:'ENT Surgeon',q:'MBBS, MS (ENT)',s:'ENT'},
+ {n:'Dr. Dheeraj Singh',r:'Nephrologist',q:'MD, DM (Nephrology)',s:'Nephrology'}];
+var AV='<svg viewBox="0 0 120 110" aria-hidden="true"><circle cx="60" cy="38" r="21"/><path d="M42 31c3-14 33-16 38 0"/><path d="M14 110V92c0-14 18-22 46-22s46 8 46 22v18"/><path d="M48 72l12 20 12-20"/><path d="M44 78c-8 10-2 22 8 22" stroke="#D2232A"/><circle cx="53" cy="100" r="3" stroke="#D2232A"/></svg>';
+
+/* ---------- fill lists ---------- */
+function li(arr){return arr.map(function(x){return '<li><a href="#doctors" data-spec="'+x[3]+'">'+x[0]+'</a></li>'}).join('')}
+document.querySelectorAll('[data-fill]').forEach(function(u){
+  var k=u.getAttribute('data-fill');
+  u.innerHTML=k==='heart'?li(COND.slice(0,4)):k==='spec'?li(SPEC):li(PROC);
+});
+var slist=document.getElementById('slist');
+function showTab(t){
+  var a=t==='spec'?SPEC:t==='proc'?PROC:COND;
+  slist.innerHTML=a.map(function(x){return '<a href="#doctors" data-spec="'+x[3]+'">'+ico(x[2])+'<span>'+x[0]+'<small class="hi">'+x[1]+'</small></span></a>'}).join('');
+  document.querySelectorAll('#stabs button').forEach(function(b){b.setAttribute('aria-selected',b.dataset.t===t)});
+}
+document.getElementById('stabs').addEventListener('click',function(e){var b=e.target.closest('button');if(b)showTab(b.dataset.t)});
+showTab('spec');
+
+/* ---------- doctors ---------- */
+var filt='All',term='';
+var chips=document.getElementById('dchips');
+['All','Cardiology','Nephrology','ENT'].forEach(function(c){
+  var b=document.createElement('button');b.type='button';b.textContent=c;b.setAttribute('aria-pressed',c==='All');
+  b.onclick=function(){setFilter(c)};chips.appendChild(b);
+});
+function setFilter(c){
+  filt=c;[].forEach.call(chips.children,function(b){b.setAttribute('aria-pressed',b.textContent===c)});renderDocs();
+}
+function renderDocs(){
+  var t=term.toLowerCase();
+  var list=DOCS.filter(function(d){return (filt==='All'||d.s===filt)&&(!t||(d.n+' '+d.s+' '+d.r).toLowerCase().indexOf(t)>-1)});
+  document.getElementById('docs').innerHTML=list.length?list.map(function(d){
+    return '<article class="doc"><div class="ph">'+AV+'</div><div class="body"><h3>'+d.n+'</h3><div class="role">'+d.r+'</div><div class="q">'+d.q+'</div><button class="btn btn-line" type="button" data-open="appointment" data-doc="'+d.n+'">Book appointment</button></div></article>';
+  }).join(''):'<div class="none" style="display:block">No match yet. Try “cardiology” or “kidney”, or call 73798 80000.</div>';
+}
+renderDocs();
+document.addEventListener('click',function(e){
+  var s=e.target.closest('[data-spec]');
+  if(s){var v=s.getAttribute('data-spec');term='';setFilter(v||'All')}
+});
+function searchDocs(v){
+  term=v.replace(/kidney/i,'Nephrology').replace(/heart/i,'Cardiology');filt='All';
+  [].forEach.call(chips.children,function(b){b.setAttribute('aria-pressed',b.textContent==='All')});
+  renderDocs();document.getElementById('doctors').scrollIntoView({behavior:'smooth'});
+}
+
+/* ---------- search ---------- */
+var spop=document.getElementById('spop'),gs=document.getElementById('gsearch');
+document.getElementById('sbtn').onclick=function(){spop.classList.toggle('open');if(spop.classList.contains('open'))gs.focus()};
+gs.addEventListener('keydown',function(e){if(e.key==='Enter'){searchDocs(gs.value);spop.classList.remove('open')}if(e.key==='Escape')spop.classList.remove('open')});
+
+/* ---------- modal ---------- */
+var modal=document.getElementById('modal'),mtabs=document.getElementById('mtabs'),ms=document.getElementById('ms');
+ms.innerHTML='<option>Any speciality</option>'+SPEC.map(function(x){return '<option>'+x[0]+'</option>'}).join('')+DOCS.map(function(d){return '<option>'+d.n+'</option>'}).join('');
+var TITLES={appointment:'Book an appointment',second:'Get a second opinion',checkup:'Book a health checkup',query:'Ask us a question'};
+function setM(k){
+  [].forEach.call(mtabs.children,function(b){b.setAttribute('aria-selected',b.dataset.m===k)});
+  document.getElementById('mtitle').textContent=TITLES[k];
+}
+mtabs.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setM(b.dataset.m)});
+function openM(k,doc){
+  document.getElementById('mform').style.display='block';document.getElementById('mdone').style.display='none';
+  setM(k||'appointment');if(doc)ms.value=doc;modal.showModal();
+}
+document.addEventListener('click',function(e){
+  var o=e.target.closest('[data-open]');
+  if(o){e.preventDefault();openM(o.getAttribute('data-open'),o.getAttribute('data-doc'))}
+});
+document.getElementById('mx').onclick=document.getElementById('mclose').onclick=function(){modal.close()};
+modal.addEventListener('click',function(e){if(e.target===modal)modal.close()});
+document.getElementById('mf').addEventListener('submit',function(e){
+  e.preventDefault();document.getElementById('mform').style.display='none';document.getElementById('mdone').style.display='block';this.reset();
+});
+document.getElementById('quickbook').addEventListener('submit',function(e){
+  e.preventDefault();var v=document.getElementById('qsearch').value.trim();
+  if(v&&document.getElementById('qtype').value==='appointment'){searchDocs(v)}else{openM(document.getElementById('qtype').value)}
+});
+
+/* ---------- nav + ticker ---------- */
+var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+burger.onclick=function(){var o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
+nav.addEventListener('click',function(e){if(e.target.closest('a'))nav.classList.remove('open')});
+var tk=[].slice.call(document.querySelectorAll('#ticker span')),ti=0;
+setInterval(function(){tk[ti].classList.remove('on');ti=(ti+1)%tk.length;tk[ti].classList.add('on')},4200);
+
+/* ---------- hero slideshow ---------- */
+(function(){
+  var hero=document.getElementById('hero');
+  var slides=[].slice.call(hero.querySelectorAll('.slide'));
+  var bars=document.getElementById('bars');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur=0;
+  slides.forEach(function(s,i){
+    s.querySelectorAll('.art svg path, .art svg circle, .art svg rect, .art svg polyline').forEach(function(el){el.setAttribute('pathLength','1');el.classList.add('drawable')});
+    var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Go to slide '+(i+1));
+    b.onclick=function(){go(i)};bars.appendChild(b);
+  });
+  function go(n){
+    cur=(n+slides.length)%slides.length;
+    slides.forEach(function(s,i){var on=i===cur;if(on){s.classList.remove('on');void s.offsetWidth}s.classList.toggle('on',on);s.setAttribute('aria-hidden',on?'false':'true')});
+    [].forEach.call(bars.children,function(b,i){b.classList.remove('on');if(i===cur){void b.offsetWidth;b.classList.add('on')}});
+  }
+  bars.addEventListener('animationend',function(e){if(e.target.classList.contains('on'))go(cur+1)},true);
+  document.getElementById('prev').onclick=function(){go(cur-1)};
+  document.getElementById('next').onclick=function(){go(cur+1)};
+  var x0=null;
+  hero.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  hero.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)go(cur+(dx<0?1:-1));x0=null});
+  go(0);
+})();
+</script>
+</body>
+</html>
